@@ -15,8 +15,8 @@ Perform the following on a build box as root.
 ## Download Redis
 
     cd /tmp
-    wget http://redis.googlecode.com/files/redis-2.0.4.tar.gz
-    cp redis-2.0.4.tar.gz ~/rpmbuild/SOURCES/
+    wget http://redis.googlecode.com/files/redis-2.2.4.tar.gz
+    cp redis-2.2.4.tar.gz ~/rpmbuild/SOURCES/
 
 ## Get Necessary System-specific Configs
 
