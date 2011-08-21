@@ -1,7 +1,7 @@
 %define pid_dir %{_localstatedir}/run/redis
 %define pid_file %{pid_dir}/redis.pid
-%define redis_ver 2.2.4
-%define redis_rel 0
+%define redis_ver 2.2.12
+%define redis_rel 1
 
 Summary: redis is a key-value database like memcached
 Name: redis
@@ -100,6 +100,9 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Thu Aug 21 2011 Alex Simenduev <shamil.si@gmail.com> 2.2.12-1
+- Upgrade to 2.2.12
+
 * Thu Feb 24 2011 SHIBATA Hiroshi <h-shibata@esm.co.jp> 2.2.1-0
 - Upgrade to 2.2.1
 
