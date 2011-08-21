@@ -31,7 +31,7 @@ Perform the following on a build box as root.
 
 The resulting RPM will be:
 
-    ~/rpmbuild/RPMS/x86_64/redis-2.0.12-1.x86_64.rpm
+    ~/rpmbuild/RPMS/x86_64/redis-2.2.12-1.x86_64.rpm
 
 ## Credits
 
