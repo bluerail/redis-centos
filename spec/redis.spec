@@ -1,6 +1,6 @@
 %define pid_dir %{_localstatedir}/run/redis
 %define pid_file %{pid_dir}/redis.pid
-%define redis_ver 2.2.12
+%define redis_ver 2.2.14
 %define redis_rel 1
 
 Summary: redis is a key-value database like memcached
@@ -9,7 +9,7 @@ Version: %{redis_ver}
 Release: %{redis_rel}
 License: BSD
 Group: Applications/Multimedia
-URL: http://code.google.com/p/redis/
+URL: http://redis.io/
 
 Source0: redis-%{redis_ver}.tar.gz
 Source2: redis.init
@@ -100,6 +100,10 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Fri Sep 23 2011 Martijn Storck <martijn@bluerail.nl> 2.2.14-1
+- Upgrade to 2.2.14
+- Update website URL
+
 * Thu Aug 21 2011 Alex Simenduev <shamil.si@gmail.com> 2.2.12-1
 - Upgrade to 2.2.12
 
