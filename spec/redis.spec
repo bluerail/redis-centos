@@ -1,7 +1,7 @@
 %define pid_dir %{_localstatedir}/run/redis
 %define pid_file %{pid_dir}/redis.pid
 %define redis_ver 2.4.8
-%define redis_rel 1
+%define redis_rel 2
 
 Summary: Redis is an open source, advanced key-value store
 Name: redis
@@ -71,7 +71,7 @@ mkdir -p %{buildroot}%{_bindir}
 %{__install} -p -d -m 0755 %{buildroot}%{pid_dir}
 
 %pre
-/usr/sbin/useradd -c 'Redis' -u 499 -s /bin/false -r -d %{_localstatedir}/lib/redis redis 2> /dev/null || :
+/usr/sbin/useradd -c 'Redis' -u 496 -s /bin/false -r -d %{_localstatedir}/lib/redis redis
 
 %preun
 if [ $1 = 0 ]; then
@@ -109,6 +109,10 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Fri Feb 27 2012 Martijn Storck <martijn@bluerail.nl> 2.4.8-2
+- Change uid for CentOS 6 compatibility
+- Don't suppress useradd warnings
+
 * Fri Feb 27 2012 Martijn Storck <martijn@bluerail.nl> 2.4.8-1
 - Upgrade to 2.4.8
 - Update description
