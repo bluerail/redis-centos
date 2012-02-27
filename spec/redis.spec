@@ -1,15 +1,15 @@
 %define pid_dir %{_localstatedir}/run/redis
 %define pid_file %{pid_dir}/redis.pid
-%define redis_ver 2.2.14
+%define redis_ver 2.4.8
 %define redis_rel 1
 
-Summary: redis is a key-value database like memcached
+Summary: Redis is an open source, advanced key-value store
 Name: redis
 Version: %{redis_ver}
 Release: %{redis_rel}
 License: BSD
-Group: Applications/Multimedia
-URL: http://redis.io/
+Group: Applications/Databases
+URL: http://redis.io
 
 Source0: redis-%{redis_ver}.tar.gz
 Source2: redis.init
@@ -24,20 +24,30 @@ Requires(postun): /sbin/service
 Provides: redis
 
 %description
-Redis is a key-value database. It is similar to memcached but the dataset is
-not volatile, and values can be strings, exactly like in memcached, but also
-lists and sets with atomic operations to push/pop elements.
+Redis is an open source, advanced key-value store. It is often referred to as a
+data structure server since keys can contain strings, hashes, lists, sets and
+sorted sets.
 
-In order to be very fast but at the same time persistent the whole dataset is
-taken in memory and from time to time and/or when a number of changes to the
-dataset are performed it is written asynchronously on disk. You may lose the
-last few queries that is acceptable in many applications but it is as fast
-as an in memory DB (beta 6 of Redis includes initial support for master-slave
-replication in order to solve this problem by redundancy).
+You can run atomic operations on these types, like appending to a string;
+incrementing the value in a hash; pushing to a list; computing set intersection,
+union and difference; or getting the member with highest ranking in a sorted
+set.
 
-Compression and other interesting features are a work in progress. Redis is
-written in ANSI C and works in most POSIX systems like Linux, *BSD, Mac OS X,
-and so on. Redis is free software released under the very liberal BSD license.
+In order to achieve its outstanding performance, Redis works with an in-memory
+dataset. Depending on your use case, you can persist it either by dumping the
+dataset to disk every once in a while, or by appending each command to a log.
+
+Redis also supports trivial-to-setup master-slave replication, with very fast
+non-blocking first synchronization, auto-reconnection on net split and so forth.
+
+Other features include a simple check-and-set mechanism, pub/sub and
+configuration settings to make Redis behave like a cache.
+
+You can use Redis from most programming languages out there.
+
+Redis is written in ANSI C and works in most POSIX systems like Linux, *BSD,
+OS X and Solaris without external dependencies. There is no official support
+for Windows builds, although you may have some options.
 
 %prep
 %setup -n %{name}-%{redis_ver}
@@ -88,7 +98,6 @@ fi
 
 %files
 %defattr(-, root, root, 0755)
-%doc doc/*.html
 %{_sbindir}/redis-server
 %{_bindir}/redis-benchmark
 %{_bindir}/redis-cli
@@ -100,6 +109,12 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Fri Feb 27 2012 Martijn Storck <martijn@bluerail.nl> 2.4.8-1
+- Upgrade to 2.4.8
+- Update description
+- Update redis.conf patch
+- Removed documentation as it's no longer included in the source
+
 * Fri Sep 23 2011 Martijn Storck <martijn@bluerail.nl> 2.2.14-1
 - Upgrade to 2.2.14
 - Update website URL

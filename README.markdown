@@ -14,13 +14,12 @@ Perform the following on a build box as root.
 
 ## Download Redis
 
-    cd /tmp
-    wget http://redis.googlecode.com/files/redis-2.2.12.tar.gz
-    cp redis-2.2.12.tar.gz ~/rpmbuild/SOURCES/
+    wget http://redis.googlecode.com/files/redis-2.4.8.tar.gz
+    cp redis-2.4.8.tar.gz ~/rpmbuild/SOURCES/
 
 ## Get Necessary System-specific Configs
 
-    git clone git://github.com/shamil/redis-centos.git
+    git clone git://github.com/bluerail/redis-centos.git
     cp redis-centos/conf/* ~/rpmbuild/SOURCES/
     cp redis-centos/spec/* ~/rpmbuild/SPECS/
 
@@ -31,7 +30,7 @@ Perform the following on a build box as root.
 
 The resulting RPM will be:
 
-    ~/rpmbuild/RPMS/x86_64/redis-2.2.12-1.x86_64.rpm
+    ~/rpmbuild/RPMS/x86_64/redis-2.4.8-1.x86_64.rpm
 
 ## Credits
 
