@@ -21,7 +21,7 @@ start() {
   daemon --user redis --pidfile $pidfile  /usr/sbin/$prog /etc/redis.conf
   RETVAL=$?
   echo
-  [ $RETVAL -eq 0 ] && touch /var/lock/subsys/$prog
+  [ $RETVAL -eq 0 ] && touch /var/lock/subsys/$prog && pidof redis-server > $pidfile
   return $RETVAL
 }
 
@@ -37,6 +37,7 @@ stop() {
         else
             rm -f /var/lib/redis/temp*rdb
             rm -f /var/lock/subsys/$prog
+            rm -f $pidfile
             echo_success
             RETVAL=0
         fi
