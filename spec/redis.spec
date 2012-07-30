@@ -1,6 +1,6 @@
 %define pid_dir %{_localstatedir}/run/redis
 %define pid_file %{pid_dir}/redis.pid
-%define redis_ver 2.4.8
+%define redis_ver 2.4.15
 %define redis_rel 2
 
 Summary: Redis is an open source, advanced key-value store
