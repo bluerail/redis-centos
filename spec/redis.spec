@@ -71,7 +71,11 @@ mkdir -p %{buildroot}%{_bindir}
 %{__install} -p -d -m 0755 %{buildroot}%{pid_dir}
 
 %pre
-/usr/sbin/useradd -c 'Redis' -u 496 -s /bin/false -r -d %{_localstatedir}/lib/redis redis
+getent group redis >/dev/null  || groupadd -r redis -g 496
+getent passwd redis >/dev/null || \
+    useradd -r -u 496 -g redis -d %{_localstatedir}/lib/redis -s /sbin/nologin \
+    -c "User for redis database" redis
+
 
 %preun
 if [ $1 = 0 ]; then
