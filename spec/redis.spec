@@ -1,6 +1,6 @@
 %define pid_dir %{_localstatedir}/run/redis
 %define pid_file %{pid_dir}/redis.pid
-%define redis_ver 2.4.17
+%define redis_ver 2.6.4
 %define redis_rel 1
 
 Summary: Redis is an open source, advanced key-value store
@@ -113,6 +113,9 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Mon Nov 12 2012 Fer Uria <fernando@vacadiez.com> 2.6.4
+- Update to Redis 2.6.4
+
 * Fri Feb 27 2012 Martijn Storck <martijn@bluerail.nl> 2.4.8-2
 - Change uid for CentOS 6 compatibility
 - Don't suppress useradd warnings

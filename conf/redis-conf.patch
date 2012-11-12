@@ -1,6 +1,5 @@
-diff -uNr redis-2.4.8__orig/redis.conf redis-2.4.8/redis.conf
---- redis-2.4.8__orig/redis.conf	2012-02-27 14:59:44.000000000 +0100
-+++ redis-2.4.8/redis.conf	2012-02-27 15:00:23.000000000 +0100
+--- redis-2.6.4/redis.conf	2012-11-08 17:47:58.000000000 +0000
++++ redis-2.6.4/redis.conf.mine	2012-11-12 02:19:21.489304944 +0000
 @@ -14,7 +14,7 @@
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
@@ -19,13 +18,7 @@ diff -uNr redis-2.4.8__orig/redis.conf redis-2.4.8/redis.conf
  
  # Specify the path for the unix socket that will be used to listen for
  # incoming connections. There is no default, so Redis will not listen
-@@ -45,12 +45,12 @@
- # verbose (many rarely useful info, but not a mess like the debug level)
- # notice (moderately verbose, what you want in production probably)
- # warning (only very important / critical messages are logged)
--loglevel verbose
-+loglevel notice
- 
+@@ -50,7 +50,7 @@
  # Specify the log file name. Also 'stdout' can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -34,12 +27,12 @@ diff -uNr redis-2.4.8__orig/redis.conf redis-2.4.8/redis.conf
  
  # To enable logging to the system logger, just set 'syslog-enabled' to yes,
  # and optionally update the other syslog parameters to suit your needs.
-@@ -104,7 +104,7 @@
+@@ -134,7 +134,7 @@
  # Also the Append Only File will be created inside this directory.
  # 
  # Note that you must specify a directory here, not a file name.
 -dir ./
-+dir /var/lib/redis/
++dir /var/lib/redis
  
  ################################# REPLICATION #################################
  
