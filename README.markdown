@@ -1,6 +1,6 @@
 # A Recipe for a Redis RPM on CentOS
 
-Perform the following on a build box as root.
+Perform the following on a build box as a regular user.
 
 ## Create an RPM Build Environment
 
@@ -14,12 +14,12 @@ Perform the following on a build box as root.
 
 ## Download Redis
 
-    wget http://redis.googlecode.com/files/redis-2.4.8.tar.gz
-    cp redis-2.4.8.tar.gz ~/rpmbuild/SOURCES/
+    wget http://redis.googlecode.com/files/redis-2.6.4.tar.gz
+    cp redis-2.6.4.tar.gz ~/rpmbuild/SOURCES/
 
 ## Get Necessary System-specific Configs
 
-    git clone git://github.com/bluerail/redis-centos.git
+    https://github.com/fauria/redis-centos
     cp redis-centos/conf/* ~/rpmbuild/SOURCES/
     cp redis-centos/spec/* ~/rpmbuild/SPECS/
 
@@ -30,7 +30,7 @@ Perform the following on a build box as root.
 
 The resulting RPM will be:
 
-    ~/rpmbuild/RPMS/x86_64/redis-2.4.8-1.x86_64.rpm
+    ~/rpmbuild/RPMS/x86_64/redis-2.6.4-1.{arch}.rpm
 
 ## Credits
 
