@@ -4,7 +4,8 @@ Perform the following on a build box as a regular user.
 
 ## Create an RPM Build Environment
 
-    sudo rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm 
+Install rpmdevtools from the [EPEL][epel] repository:
+
     sudo yum install rpmdevtools
     rpmdev-setuptree
 
@@ -19,7 +20,7 @@ Perform the following on a build box as a regular user.
 
 ## Get Necessary System-specific Configs
 
-    https://github.com/fauria/redis-centos
+    git clone git://github.com/bluerail/redis-centos.git
     cp redis-centos/conf/* ~/rpmbuild/SOURCES/
     cp redis-centos/spec/* ~/rpmbuild/SPECS/
 
@@ -34,6 +35,6 @@ The resulting RPM will be:
 
 ## Credits
 
-Based on the `redis.spec` file from Jason Priebe, found on [Google Code][gc].
+Based on the `redis.spec` file from Jason Priebe.
 
- [gc]: http://groups.google.com/group/redis-db/files
+[EPEL]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
