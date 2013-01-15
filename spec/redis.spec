@@ -73,7 +73,7 @@ mkdir -p %{buildroot}%{_bindir}
 %pre
 getent group redis >/dev/null  || groupadd -r redis
 getent passwd redis >/dev/null || \
-    useradd -r -u redis -g redis -d %{_localstatedir}/lib/redis -s /sbin/nologin \
+    useradd -r -g redis -d %{_localstatedir}/lib/redis -s /sbin/nologin \
     -c "User for redis database" redis
 
 
