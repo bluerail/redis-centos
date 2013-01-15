@@ -71,9 +71,9 @@ mkdir -p %{buildroot}%{_bindir}
 %{__install} -p -d -m 0755 %{buildroot}%{pid_dir}
 
 %pre
-getent group redis >/dev/null  || groupadd -r redis -g 496
+getent group redis >/dev/null  || groupadd -r redis
 getent passwd redis >/dev/null || \
-    useradd -r -u 496 -g redis -d %{_localstatedir}/lib/redis -s /sbin/nologin \
+    useradd -r -u redis -g redis -d %{_localstatedir}/lib/redis -s /sbin/nologin \
     -c "User for redis database" redis
 
 
@@ -113,6 +113,10 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Tue Jan 15 2013 Martijn Storck <martijn@bluerail.nl> 2.6.8
+- Update to Redis 2.6.8
+- Don't specify UID and GID for service user
+
 * Mon Nov 12 2012 Fer Uria <fernando@vacadiez.com> 2.6.4
 - Update to Redis 2.6.4
 
