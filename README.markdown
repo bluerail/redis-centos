@@ -15,8 +15,8 @@ Install rpmdevtools from the [EPEL][epel] repository:
 
 ## Download Redis
 
-    wget http://redis.googlecode.com/files/redis-2.6.7.tar.gz
-    mv redis-2.6.7.tar.gz ~/rpmbuild/SOURCES/
+    wget http://redis.googlecode.com/files/redis-2.6.8.tar.gz
+    mv redis-2.6.8.tar.gz ~/rpmbuild/SOURCES/
 
 ## Get Necessary System-specific Configs
 
@@ -31,10 +31,12 @@ Install rpmdevtools from the [EPEL][epel] repository:
 
 The resulting RPM will be:
 
-    ~/rpmbuild/RPMS/x86_64/redis-2.6.7-1.{arch}.rpm
+    ~/rpmbuild/RPMS/x86_64/redis-2.6.8-1.{arch}.rpm
 
 ## Credits
 
 Based on the `redis.spec` file from Jason Priebe.
+
+Maintained by [Martijn Storck](martijn@bluerail.nl)
 
 [EPEL]: http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
