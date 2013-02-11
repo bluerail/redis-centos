@@ -1,5 +1,5 @@
---- redis-2.6.4/redis.conf	2012-11-08 17:47:58.000000000 +0000
-+++ redis-2.6.4/redis.conf.mine	2012-11-12 02:19:21.489304944 +0000
+--- redis-2.6.10/redis.conf       2013-02-11 13:24:39.000000000 +0100
++++ redis-2.6.10/redis.conf.mine	2013-02-11 16:12:12.128041757 +0100
 @@ -14,7 +14,7 @@
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
@@ -18,7 +18,7 @@
  
  # Specify the path for the unix socket that will be used to listen for
  # incoming connections. There is no default, so Redis will not listen
-@@ -50,7 +50,7 @@
+@@ -66,7 +66,7 @@
  # Specify the log file name. Also 'stdout' can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -27,12 +27,12 @@
  
  # To enable logging to the system logger, just set 'syslog-enabled' to yes,
  # and optionally update the other syslog parameters to suit your needs.
-@@ -134,7 +134,7 @@
- # Also the Append Only File will be created inside this directory.
+@@ -150,7 +150,7 @@
+ # The Append Only File will also be created inside this directory.
  # 
  # Note that you must specify a directory here, not a file name.
 -dir ./
-+dir /var/lib/redis
++dir /var/lib/redis/
  
  ################################# REPLICATION #################################
  
