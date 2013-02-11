@@ -1,6 +1,6 @@
 %define pid_dir %{_localstatedir}/run/redis
 %define pid_file %{pid_dir}/redis.pid
-%define redis_ver 2.6.8
+%define redis_ver 2.6.10
 %define redis_rel 1
 
 Summary: Redis is an open source, advanced key-value store
@@ -113,6 +113,9 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Tue Feb 11 2013 Martijn Storck <martijn@bluerail.nl> 2.6.10
+- Update to Redis 2.6.8
+
 * Tue Jan 15 2013 Martijn Storck <martijn@bluerail.nl> 2.6.8
 - Update to Redis 2.6.8
 - Don't specify UID and GID for service user
