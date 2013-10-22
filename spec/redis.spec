@@ -1,6 +1,6 @@
 %define pid_dir %{_localstatedir}/run/redis
 %define pid_file %{pid_dir}/redis.pid
-%define redis_ver 2.6.14
+%define redis_ver 2.6.16
 %define redis_rel 1
 
 Summary: Redis is an open source, advanced key-value store
@@ -113,6 +113,9 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Tue Oct 22 2013 Ryan O'Keeffe <danielredoak@gmail.com> 2.6.16
+-Update to Redis 2.6.16
+
 * Tue Jul 31 2013 Martijn Storck <martijn@bluerail.nl> 2.6.14
 - Update to Redis 2.6.14
 
