@@ -15,7 +15,7 @@ Install rpmdevtools from the [EPEL][epel] repository:
 
 ## Download Redis
 
-    wget http://redis.googlecode.com/files/redis-2.6.16.tar.gz
+    wget http://download.redis.io/releases/redis-2.6.16.tar.gz
     mv redis-2.6.16.tar.gz ~/rpmbuild/SOURCES/
 
 ## Get Necessary System-specific Configs
